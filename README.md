@@ -48,22 +48,22 @@ Pantallas de login y registro, que muestran la interfaz limpia y validaciones de
 - Todos los productos que se muestran se obtienen de la **API REST**.
 - Hay un **darkmode**.
 - Menu **responsive**, que se puede abrir y cerrar con un ícono de tres puntos.
-![Home - vista principal](screenshots/home1.png)  
+![Home - vista principal](screenshots/home1-0.png)  
 
 - Carrousel de productos de **PrimeNG** obtenido de la API REST.
-![Home - sección de cursos](screenshots/home2.png)  
+![Home - sección de cursos](screenshots/home2-0.png)  
 
 - Gestion de correos mediante **nodemailer**.
-![Home - progreso del usuario](screenshots/home3.png)  
+![Home - progreso del usuario](screenshots/home3-0.png)  
 
 - Componente galeria de imagenes de **PrimeNG** obtenido de la API REST.
-![Home - notificaciones](screenshots/home4.png)  
+![Home - notificaciones](screenshots/home4-0.png)  
 
 - Diseño responsive desplegable del acerca de la empresa.
-![Home - menú lateral](screenshots/home5.png)  
+![Home - menú lateral](screenshots/home5-0.png)  
 
 - Footer estatico con un desplegable de **PrimeNG** con los idiomas disponibles gestioandos con `npx translate`.
-![Home - ajustes rápidos](screenshots/home6.png)
+![Home - ajustes rápidos](screenshots/home6-0.png)
 
 ---
 
@@ -81,8 +81,8 @@ Pantallas de login y registro, que muestran la interfaz limpia y validaciones de
 - CRUD de productos con **PrimeNG** y **Angular Material**.
 - Previsualizacion de imagenes.
 - Paginacion controlada por la API REST.
-![Dashboard](screenshots/admin1.png)
-![Dashboard](screenshots/admin2.png)
+![Dashboard](screenshots/admin1-0.png)
+![Dashboard](screenshots/admin2-0.png)
 
 ---
 
