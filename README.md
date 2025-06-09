@@ -36,10 +36,10 @@ Pantallas de login y registro, que muestran la interfaz limpia y validaciones de
 - Implementacion de **JWT** para autenticación.
 - **Firebase** para el login con Google.
 - Implementacion de un servicio de carga para el boton de login.
-![Login](screenshots/login.png)  
+![Login](screenshots/login-1.png)  
 
 - Utilizando **disabled** para deshabilitar los desplegables hasta que se complete el anterior desplegable.
-![Registro de usuario](screenshots/register.png)
+![Registro de usuario](screenshots/register-1.png)
 
 
 ---
