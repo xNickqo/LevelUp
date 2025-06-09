@@ -2,9 +2,6 @@
   <img src="front-end/src/assets/img/logo.PNG" alt="Logo" width="200"/>
 </p>
 
-<h1 align="center">🧠 LevelUp</h1>
-
-
 **LevelUp** es una aplicación web de tipo SPA que combina Angular en el frontend y Node.js/Express en el backend para ofrecer una plataforma moderna y escalable de formación interactiva.
 
 ---
