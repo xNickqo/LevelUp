@@ -1,0 +1,47 @@
+#about {
+  background-color: var(--bg-body);
+  padding: 4rem 18rem;
+  text-align: center;
+}
+
+#about h1 {
+  padding-bottom: 2rem;
+  color: var(--text-color-primary);
+}
+
+p{
+  color: var(--text-color-secondary);
+}
+
+.expand-icon,
+.close-icon {
+  display: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--text-color-primary);
+  text-decoration: none;
+}
+
+#expand-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+#expand-content.visible {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+/* 📱 Media QUERY */
+@media (max-width: 1024px) {
+  #about {
+    padding: 4rem 6rem;
+  }
+
+  .expand-icon,
+  .close-icon {
+    display: inline-block;
+  }
+}

@@ -1,0 +1,30 @@
+<div class="con">
+    <section id="stars">
+        <div class="card flex justify-center">
+            @if (images && images.length > 0) {
+            <div class="grid gap-6 max-w-[800px] grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+                <div *ngFor="let image of images; let index = index" class="w-full" key="index">
+                    <img [src]="image.imagenUrl" [alt]="image.nombre" class="w-full cursor-pointer" (click)="imageClick(index)" />
+                </div>
+            </div>
+            }
+
+            <p-galleria
+                [value]="images"
+                [(visible)]="displayCustom"
+                [(activeIndex)]="activeIndex"
+                [responsiveOptions]="responsiveOptions"
+                [containerStyle]="{ 'max-width': '850px' }"
+                [numVisible]="7"
+                [circular]="true"
+                [fullScreen]="true"
+                [showItemNavigators]="true"
+                [showThumbnails]="false"
+            >
+                <ng-template #item let-item>
+                    <img [src]="item.imagenUrl" style="width: 100%; display: block" />
+                </ng-template>
+            </p-galleria>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,69 @@
+{
+    "header": {
+        "SHOP": "Shop",
+        "ABOUT": "About us",
+        "SUPPORT": "Suport",
+        "LOGOUT": "Log out",
+        "CHANGE_LANGUAGE": "Change language"
+    },
+    "hero": {
+        "HEADLINE": "Authenticity, nostalgia, and fun in every game. Level up your collection!",
+        "BUTTON": "Shop now!"
+    },
+    "newsletter": {
+        "TITLE": "Join the Level Up Club!",
+        "PLACEHOLDER": "Email",
+        "TITLE_HINT": "Enter your email address",
+        "BUTTON": "Subscribe"
+    },
+    "about": {
+        "TITLE": "About Level Up",
+        "INTRO": "Welcome to Level Up, your online store specializing in vintage arcade video game cartridges. We're passionate about gaming nostalgia and believe the classics never die. Here you'll find a curated selection of original cartridges, from iconic 80s and 90s titles to rare gems that defined an era.",
+        "ARCADE_MAGIC_TITLE": "Relive the Magic of the Arcade",
+        "ARCADE_MAGIC_TEXT": "Arcade video games were not only the beginning of the industry but also defined entire generations. At Level Up, we want you to enjoy those retro gems once again, whether you're collecting them or playing on original hardware.",
+    
+        "WHAT_WE_OFFER_TITLE": "What do we offer?",
+        "WHAT_WE_OFFER_1": "<b>Original cartridges</b> in perfect condition.",
+        "WHAT_WE_OFFER_2": "<b>Rare and limited editions</b> that are hard to find.",
+        "WHAT_WE_OFFER_3": "<b>Accessories and manuals</b> to complete your collection.",
+        "WHAT_WE_OFFER_4": "<b>Personalized assistance</b> to help you find the game you're looking for.",
+    
+        "FOR_GAMERS_TITLE": "For gamers and collectors",
+        "FOR_GAMERS_TEXT": "Whether you're a collector searching for a unique piece or a gamer looking to relive your childhood, Level Up is the perfect place for you. We work with carefully inspected products to ensure the best quality and authenticity.",
+    
+        "WORLDWIDE_SHIPPING_TITLE": "Worldwide shipping",
+        "WORLDWIDE_SHIPPING_TEXT": "Are you looking for that cartridge that marked your childhood? We'll ship it wherever you are so you can enjoy it again."
+    },
+    "find_us": {
+        "TITLE": "Find us",
+        "FACEBOOK": "Facebook",
+        "TWITTER": "Twitter",
+        "INSTAGRAM": "Instagram"
+    },
+    "footer": {
+        "COPYRIGHT": "Level Up. All rights reserved."
+    },
+    "SHOP": {
+        "TITLE": "🎮 Arcade Cartridge Store",
+        "BACK": "Back",
+        "IN_CART": "Already in cart",
+        "ADD_TO_CART": "Add to cart",
+        "CART_TITLE": "🛒 Your Cart",
+        "CART_EMPTY": "Your cart is empty.",
+        "REMOVE": "Remove",
+        "TOTAL": "Total:",
+        "CHECKOUT": "Checkout"
+    },
+    "common": {
+        "accessDenied": "Acces denied",
+        "close": "Close"
+    },
+    "confirmdialog": {
+        "no": "No",
+        "yes": "Yes"
+    },
+    "errors": {
+        "unknown": "Unknown error"
+    },
+    "hello": "Wellcome to Jenga 🙌"
+}

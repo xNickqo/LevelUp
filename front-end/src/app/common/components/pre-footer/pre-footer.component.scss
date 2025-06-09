@@ -1,0 +1,61 @@
+#pre-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 3.125rem 5rem;
+    background: linear-gradient(to bottom, var(--bg-surface), var(--bg-body));
+  }
+  
+  #pre-footer .enterprise img {
+    padding: 0.625rem;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-bottom: 3px solid black;
+  }
+  
+  #pre-footer div:nth-of-type(1) {
+    align-self: flex-end;
+  }
+  
+  #pre-footer div ul {
+    padding: 1.25rem 0;
+  }
+  
+  #pre-footer div ul li {
+    list-style: none;
+    padding: 0.3125rem 0;
+    text-transform: capitalize;
+  }
+  
+  #pre-footer div ul li a {
+    text-decoration: none;
+  }
+  
+  #pre-footer div ul li a:hover {
+    text-shadow: 2px 2px 15px var(--color-white);
+    transition: text-shadow 0.3s ease-in;
+  }
+
+  .find-us-on h3 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  /* 📱 Media QUERYS */
+@media (max-width: 768px) {
+    #pre-footer {
+      display: none;
+      // padding: 2rem;
+    }
+  
+    // #pre-footer div:nth-of-type(1) {
+    //   display: none;
+    // }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    #pre-footer {
+      padding: 3rem;
+    }
+  }
+  

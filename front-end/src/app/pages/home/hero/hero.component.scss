@@ -1,0 +1,80 @@
+/* Sección Hero */
+#hero {
+    height: fit-content;
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(to bottom, var(--bg-body), var(--bg-surface));
+  }
+  
+  #hero h1 {
+    width: 50%;
+    margin: 0 auto;
+    padding: 2rem 0;
+    color: var(--text-color-primary);
+    /*overflow-wrap: break-word;*/
+  }
+  
+  #hero hr {
+    width: 30%;
+    margin: 0 auto;
+    border: 1px solid var(--text-color-primary);
+  }
+  
+  .featured-images {
+    display: flex;
+    justify-content: center;
+    /* flex-wrap: wrap;*/
+  
+    gap: 1.875rem;
+    margin: 5rem;
+  }
+  
+  .image-box {
+    background-color: white;
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--border-radius-md);
+  }
+  
+  .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius-md);
+    padding: 1rem;
+  }
+  
+  .shop-now {
+    padding: 0.625rem 3.75rem;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .shop-now:hover {
+    background-color: var(--color-primary-hover);
+    transform: scale(1.05);
+    transition: transform 0.1s ease-in;
+  }
+  
+  /* 📱 Media QUERYS */
+  @media (max-width: 768px) {
+    #hero h1 {
+      width: 70%;
+      max-width: 90vw;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #hero h1 {
+      width: 90%;
+      max-width: 95vw;
+    }
+  
+    .image-box {
+      width: min(9rem, 40vw);
+      height: min(9rem, 40vw);
+    }
+  }
+  

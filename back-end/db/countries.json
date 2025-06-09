@@ -1,0 +1,64 @@
+{
+  "countries": [
+    {
+      "id": "1",
+      "name": "España",
+      "isoCode": "ES",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "name": "Francia",
+      "isoCode": "FR",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "name": "Portugal",
+      "isoCode": "PT",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "4",
+      "name": "Alemania",
+      "isoCode": "DE",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "5",
+      "name": "Italia",
+      "isoCode": "IT",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "6",
+      "name": "Reino Unido",
+      "isoCode": "GB",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "7",
+      "name": "Estados Unidos",
+      "isoCode": "US",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "8",
+      "name": "México",
+      "isoCode": "MX",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "9",
+      "name": "Argentina",
+      "isoCode": "AR",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "10",
+      "name": "Chile",
+      "isoCode": "CL",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+<!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" /> -->
+<div class="flex flex-col min-h-screen">
+    <div class="flex-1 mx-auto p-8 bg-gray-dark w-full">
+        <h1 class="text-xl text-center font-bold text-text-primary mb-10">
+            {{ "SHOP.TITLE" | translate }}
+        </h1>
+
+        <!-- Botón de Volver a la página principal -->
+        <button routerLink="/" class="fixed top-6 left-6 px-5 py-3 text-xl text-text-primary cursor-pointer">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <!-- Botón del carrito -->
+        @if(!cartVisible) {
+        <button
+            (click)="toggleCart()"
+            class="fixed top-6 right-6 z-50 bg-primary text-white px-5 py-3 rounded-full shadow hover:bg-primary-hover transition"
+        >
+            🛒 ({{ cart.length }})
+        </button>
+        }
+
+        <!-- Grid de productos -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            @for(product of products; track product) {
+            <div
+                class="bg-muted rounded-lg shadow hover:shadow-md transition relative flex flex-col cursor-pointer"
+                [class.opacity-50]="isInCart(product)"
+            >
+                <!-- Imagen del producto -->
+                <img
+                    class="w-full h-48 bg-white p-4 object-contain rounded-t-lg"
+                    [src]="product.imagenUrl"
+                    [alt]="product.nombre"
+                    loading="lazy"
+                    (click)="goToDetail(product.id)"
+                />
+
+                <div class="flex-1 p-4 flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-xl font-semibold !text-text-primary">{{ product.nombre }}</h2>
+                        <p class="text-sm !text-text-secondary mb-2">{{ product.descripcion }}</p>
+                        <p class="!text-green-400 font-bold text-base">{{ product.precio | currency : "EUR" }}</p>
+                    </div>
+
+                    <!-- Botón "Añadir al carrito" -->
+                    <button
+                        (click)="addToCart(product)"
+                        class="!mt-4 w-full bg-primary !text-text-primary py-2 rounded hover:bg-primary-hover transition"
+                        [disabled]="isInCart(product)"
+                    >
+                        {{ isInCart(product) ? ("SHOP.IN_CART" | translate) : ("SHOP.ADD_TO_CART" | translate) }}
+                    </button>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Panel lateral del carrito -->
+<div
+    class="fixed top-0 right-0 h-full w-96 bg-muted shadow-lg transform transition-transform duration-300 z-50 flex flex-col"
+    [class.translate-x-full]="!cartVisible"
+>
+    <!-- Cabecera -->
+    <div class="flex justify-between items-center px-6 py-4 bg-gray-dark text-white">
+        <h2 class="text-xl font-bold">
+            {{ "SHOP.CART_TITLE" | translate }}
+        </h2>
+        <button (click)="toggleCart()" class="text-white text-3xl leading-none cursor-pointer">×</button>
+    </div>
+
+    <!-- Lista de productos -->
+    <div class="flex-1 overflow-y-auto px-6 py-4 space-y-4 shadow-lg">
+        @if (cart.length === 0) {
+        <p class="!text-text-secondary text-center mt-6">
+            {{ "SHOP.CART_EMPTY" | translate }}
+        </p>
+        } @for(item of cart; track item) {
+        <div class="border-b pb-3">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h3 class="!text-text-primary font-semibold font-xl">{{ item.nombre }}</h3>
+                    <p class="!text-green-300 text-sm">{{ item.precio | currency : "EUR" }}</p>
+                </div>
+                <button (click)="removeFromCart(item)" class="font-bold text-lg !text-red-500 hover:!text-red-400 text-sm">
+                    {{ "SHOP.REMOVE" | translate }}
+                </button>
+            </div>
+        </div>
+        }
+    </div>
+
+    <!-- Total -->
+    <div class="px-6 py-5 bg-gray-dark">
+        <div class="flex justify-between text-lg font-bold !text-text-primary mb-4">
+            <span>{{ "SHOP.TOTAL" | translate }}</span>
+            <span>{{ total | currency : "EUR" }}</span>
+        </div>
+
+        <button
+            (click)="pay()"
+            [disabled]="cart.length === 0"
+            class="w-full bg-green-500 font-bold text-xl text-white py-3 rounded hover:bg-green-600 transition duration-300 cursor-pointer"
+        >
+            {{ "SHOP.CHECKOUT" | translate }}
+        </button>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

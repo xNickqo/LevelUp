@@ -1,0 +1,39 @@
+.con{
+  background: linear-gradient(to top, var(--bg-body), var(--bg-card));
+}
+
+#featured-products {
+    width: 60%;
+    max-width: 1200px;
+    height: fit-content;
+    text-align: center;
+    padding: 5rem 0;;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  p-carousel {
+    width: 100%;
+  }
+
+  img {
+    background-color: white;
+  }
+  
+  /* 📱 Media QUERYS */
+  @media (max-width: 1024px) {
+    #featured-products {
+      width: 80%;
+    }
+  }
+  
+  @media (max-width: 680px) {
+    #featured-products {
+      width: 90%;
+    }
+
+    img {
+      width: 60%;
+      height: auto;
+    }
+  }

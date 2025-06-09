@@ -1,0 +1,29 @@
+<section id="about">
+    <h1>{{ 'about.TITLE' | translate }}</h1>
+    <p>{{ 'about.INTRO' | translate }}</p>
+    <br />
+    <a href="#" *ngIf="isMobile && !contentVisible" class="expand-icon" (click)="toggleContent($event)">
+        <i class="fa-solid fa-arrow-down"></i>
+    </a>
+    <br />
+    <div id="expand-content" [class.visible]="contentVisible || !isMobile">
+        <h3><i class="fa-solid fa-gamepad"></i> {{ 'about.ARCADE_MAGIC_TITLE' | translate }}</h3>
+        <p>{{ 'about.ARCADE_MAGIC_TEXT' | translate }}</p>
+        <br />
+        <h3><i class="fa-solid fa-joystick"></i> {{ 'about.WHAT_WE_OFFER_TITLE' | translate }}</h3>
+        <p [innerHTML]="'about.WHAT_WE_OFFER_1' | translate"></p>
+        <p [innerHTML]="'about.WHAT_WE_OFFER_2' | translate"></p>
+        <p [innerHTML]="'about.WHAT_WE_OFFER_3' | translate"></p>
+        <p [innerHTML]="'about.WHAT_WE_OFFER_4' | translate"></p>
+        <br />
+        <h3><i class="fa-regular fa-heart"></i> {{ 'about.FOR_GAMERS_TITLE' | translate }}</h3>
+        <p>{{ 'about.FOR_GAMERS_TEXT' | translate }}</p>
+        <br />
+        <h3><i class="fa-solid fa-earth-americas"></i> {{ 'about.WORLDWIDE_SHIPPING_TITLE' | translate }}</h3>
+        <p>{{ 'about.WORLDWIDE_SHIPPING_TEXT' | translate }}</p>
+    </div>
+    <br />
+    <a href="#" *ngIf="isMobile && contentVisible" class="close-icon" (click)="toggleContent($event)">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</section>

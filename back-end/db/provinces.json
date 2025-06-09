@@ -1,0 +1,304 @@
+{
+  "provinces": [
+    {
+      "id": "04",
+      "name": "Almería",
+      "communityId": "01",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "11",
+      "name": "Cádiz",
+      "communityId": "01",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "14",
+      "name": "Córdoba",
+      "communityId": "01",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "18",
+      "name": "Granada",
+      "communityId": "01",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "21",
+      "name": "Huelva",
+      "communityId": "01",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "23",
+      "name": "Jaén",
+      "communityId": "01",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "29",
+      "name": "Málaga",
+      "communityId": "01",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "41",
+      "name": "Sevilla",
+      "communityId": "01",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "22",
+      "name": "Huesca",
+      "communityId": "02",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "44",
+      "name": "Teruel",
+      "communityId": "02",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "50",
+      "name": "Zaragoza",
+      "communityId": "02",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "33",
+      "name": "Asturias",
+      "communityId": "03",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "07",
+      "name": "Islas Baleares",
+      "communityId": "04",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "35",
+      "name": "Las Palmas",
+      "communityId": "05",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "38",
+      "name": "Santa Cruz de Tenerife",
+      "communityId": "05",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "39",
+      "name": "Cantabria",
+      "communityId": "06",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "02",
+      "name": "Albacete",
+      "communityId": "07",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "13",
+      "name": "Ciudad Real",
+      "communityId": "07",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "16",
+      "name": "Cuenca",
+      "communityId": "07",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "19",
+      "name": "Guadalajara",
+      "communityId": "07",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "45",
+      "name": "Toledo",
+      "communityId": "07",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "05",
+      "name": "Ávila",
+      "communityId": "08",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "09",
+      "name": "Burgos",
+      "communityId": "08",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "24",
+      "name": "León",
+      "communityId": "08",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "34",
+      "name": "Palencia",
+      "communityId": "08",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "37",
+      "name": "Salamanca",
+      "communityId": "08",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "40",
+      "name": "Segovia",
+      "communityId": "08",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "42",
+      "name": "Soria",
+      "communityId": "08",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "47",
+      "name": "Valladolid",
+      "communityId": "08",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "49",
+      "name": "Zamora",
+      "communityId": "08",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "08",
+      "name": "Barcelona",
+      "communityId": "09",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "17",
+      "name": "Girona",
+      "communityId": "09",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "25",
+      "name": "Lleida",
+      "communityId": "09",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "43",
+      "name": "Tarragona",
+      "communityId": "09",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "06",
+      "name": "Badajoz",
+      "communityId": "10",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "10",
+      "name": "Cáceres",
+      "communityId": "10",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "15",
+      "name": "A Coruña",
+      "communityId": "11",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "27",
+      "name": "Lugo",
+      "communityId": "11",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "32",
+      "name": "Ourense",
+      "communityId": "11",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "36",
+      "name": "Pontevedra",
+      "communityId": "11",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "28",
+      "name": "Madrid",
+      "communityId": "12",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "30",
+      "name": "Murcia",
+      "communityId": "13",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "31",
+      "name": "Navarra",
+      "communityId": "14",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "01",
+      "name": "Álava",
+      "communityId": "15",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "20",
+      "name": "Gipuzkoa",
+      "communityId": "15",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "48",
+      "name": "Bizkaia",
+      "communityId": "15",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "26",
+      "name": "La Rioja",
+      "communityId": "16",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "03",
+      "name": "Alicante",
+      "communityId": "17",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "12",
+      "name": "Castellón",
+      "communityId": "17",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "46",
+      "name": "Valencia",
+      "communityId": "17",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    }
+  ]
+}

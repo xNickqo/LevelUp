@@ -1,0 +1,23 @@
+.con{
+  background: linear-gradient(to bottom, var(--bg-body), var(--bg-card));
+}
+
+#stars {
+  height: fit-content;
+  width: 80%;
+  margin: 0 auto;
+  padding: 7rem 5rem;
+}
+
+img{
+  border-radius: var(--border-radius-md);
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-sm);
+  background-color: white;
+  padding: 1rem;
+}
+  
+  

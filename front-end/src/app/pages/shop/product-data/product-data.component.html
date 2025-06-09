@@ -1,0 +1,26 @@
+<div (click)="close()" class="fixed inset-0 bg-[rgba(0,0,0,0.5)] flex justify-center items-center z-[9999]">
+    <div (click)="$event.stopPropagation()" class="bg-white rounded-lg p-6 max-w-lg w-full relative shadow-lg animate-fade-in">
+        <!-- Botón de cerrar -->
+        <button (click)="close()" class="absolute top-2 right-4 text-3xl font-bold" aria-label="Cerrar">
+            <i class="fa-solid fa-xmark !text-primary hover:!text-primary-hover cursor-pointer"></i>
+        </button>
+
+        <!-- Mensaje de error -->
+        @if(error && !cartucho) {
+        <ng-container>
+            <p class="!text-red-600 font-bold text-center text-lg">{{ error }}</p>
+        </ng-container>
+        }
+
+        <!-- Detalles del producto -->
+        @if (cartucho) {
+        <ng-container>
+            <img
+                [src]="cartucho.imagenUrl"
+                [alt]="cartucho.nombre"
+                class="w-full h-80 p-4 object-contain mb-4 rounded-md border"
+            />
+        </ng-container>
+        }
+    </div>
+</div>

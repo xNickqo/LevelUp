@@ -1,0 +1,18 @@
+<section id="hero">
+    <div>
+        <h1>{{ "hero.HEADLINE" | translate }}</h1>
+        <hr />
+    </div>
+
+    <div class="featured-images">
+        @for (image of images; track image) {
+        <div class="image-box">
+            <img [src]="image.url" [alt]="image.descripcion" />
+        </div>
+        }
+    </div>
+
+    <button class="shop-now" routerLink="/shop">
+        {{ "hero.BUTTON" | translate }}
+    </button>
+</section>

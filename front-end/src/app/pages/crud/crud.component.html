@@ -1,0 +1,172 @@
+<div class="crud-cartuchos">
+    <!-- Botón de volver al inicio -->
+    <a routerLink="/" class="back-button" aria-label="Volver al inicio">
+        <i class="pi pi-home"></i>
+    </a>
+
+    <!-- Formulario -->
+    <div class="form-div">
+        <form [formGroup]="nuevoCartuchoForm" (ngSubmit)="onSubmit()">
+            <h2>Cartuchos</h2>
+
+            <!-- Nombre -->
+            <p-inputGroup class="mb-6">
+                <p-inputGroupAddon>
+                    <i class="pi pi-inbox"></i>
+                </p-inputGroupAddon>
+                <input pInputText placeholder="Nombre" type="text" formControlName="nombre" />
+            </p-inputGroup>
+
+            <!-- Descripcion -->
+            <p-inputGroup class="mb-6">
+                <p-inputGroupAddon>
+                    <i class="pi pi-align-left"></i>
+                </p-inputGroupAddon>
+                <input pInputText placeholder="Descripcion" type="text" formControlName="descripcion" />
+            </p-inputGroup>
+
+            <!-- Selecciona una temática -->
+            <p-dropdown
+                class="mb-6 w-full"
+                [options]="tematicas"
+                optionLabel="nombre"
+                optionValue="nombre"
+                placeholder="Saelecciona una temática"
+                formControlName="tematica"
+            />
+
+            <!-- Precio del cartucho -->
+            <p-inputNumber
+                class="w-full mb-6"
+                formControlName="precio"
+                mode="currency"
+                inputId="currency-spain"
+                currency="EUR"
+                locale="es-ES"
+            />
+
+            <!-- Imagen del cartucho (INPUT TYPE FILE) -->
+            <label for="file-upload" class="custom-file-upload w-full"> Importar imagen </label>
+            <input id="file-upload" type="file" (change)="onFileSelected($event)" />
+
+            <div *ngIf="imagenUrl" class="preview-container">
+                <img [src]="imagenUrl" alt="Preview imagen" />
+                <p>Archivo seleccionado: {{ nombreArchivo }}</p>
+            </div>
+
+            <!-- Botón de enviar -->
+            <p-button type="submit" icon="pi pi-check" severity="primary" label="{{ editando ? 'Actualizar' : 'Añadir' }}" />
+        </form>
+    </div>
+
+    <!-- Lista de cartuchos -->
+    <div class="list-div hidden lg:block">
+        <!-- Búsqueda -->
+        <div class="search-box flex justify-between items-center w-175 mx-auto">
+            <mat-form-field appearance="outline" class="w-full">
+                <mat-label>Buscar cartuchos</mat-label>
+                <input matInput type="text" #searchInput />
+                <button mat-icon-button matSuffix (click)="applyFilter(searchInput.value)">
+                    <mat-icon>search</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+
+        <!-- TABLA -->
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort (matSortChange)="inSortChange()">
+            <ng-container matColumnDef="imagenUrl">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                    <img *ngIf="element.imagenUrl" [src]="element.imagenUrl" alt="Imagen Cartucho" class="cartucho-img" />
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="nombre">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    <div class="header-cell-content">
+                        <span><b>Nombre</b></span>
+                    </div>
+                </th>
+                <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="descripcion">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    <div class="header-cell-content">
+                        <span><b>Descripcion</b></span>
+                    </div>
+                </th>
+                <td mat-cell *matCellDef="let element">{{ element.descripcion }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="tematica">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    <div class="header-cell-content">
+                        <span><b>Tematica</b></span>
+                    </div>
+                </th>
+                <td mat-cell *matCellDef="let element">{{ element.tematica }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="precio">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    <div class="header-cell-content">
+                        <span><b>Precio</b></span>
+                    </div>
+                </th>
+                <td mat-cell *matCellDef="let element">{{ element.precio }} €</td>
+            </ng-container>
+
+            <ng-container matColumnDef="botones">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element" class="botones-cell">
+                    <button mat-icon-button color="accent" (click)="onEditar(element)" type="button">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button color="warn" (click)="onEliminar(element)" type="button">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+    </div>
+
+    <!-- Vista responsive (tarjetas) para móviles y tablets -->
+    <div class="lg:hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <hr class="col-span-full" />
+        <div *ngFor="let element of dataSource.data" class="border border-primary rounded-2xl shadow bg-secondary">
+            <div *ngIf="element.imagenUrl" class="mb-4 overflow-hidden border rounded-2xl">
+                <img [src]="element.imagenUrl" alt="Imagen Cartucho" class="w-full p-6 bg-white object-cover" />
+            </div>
+            <div class="p-4">
+                <div><b>Nombre:</b> {{ element.nombre }}</div>
+                <div><b>Descripcion:</b> {{ element.descripcion }}</div>
+                <div><b>Tematica:</b> {{ element.tematica }}</div>
+                <div><b>Precio:</b> {{ element.precio }} €</div>
+                <div class="flex justify-end gap-2 mt-2">
+                    <button mat-icon-button color="accent" (click)="onEditar(element)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button color="warn" (click)="onEliminar(element)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paginador -->
+    <mat-paginator
+        [length]="totalItems"
+        [pageSize]="pageSize"
+        [pageIndex]="currentPage - 1"
+        [pageSizeOptions]="[5, 10, 25, 50]"
+        (page)="onPageChange($event)"
+        aria-label="Seleccionar página"
+        showFirstLastButtons
+    >
+    </mat-paginator>
+</div>

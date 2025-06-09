@@ -1,0 +1,69 @@
+{
+    "header": {
+        "SHOP": "Tienda",
+        "ABOUT": "Acerca de nosotros",
+        "SUPPORT": "Soporte",
+        "LOGOUT": "Cerrar sesión",
+        "CHANGE_LANGUAGE": "Cambiar idioma"
+    },
+    "hero": {
+        "HEADLINE": "Autenticidad, nostalgia y diversion en cada juego. ¡Level Up tu coleccion!",
+        "BUTTON": "¡Compra ahora!"
+    },
+    "newsletter": {
+        "TITLE": "¡Unete al Club Level Up!",
+        "PLACEHOLDER": "Email",
+        "TITLE_HINT": "Introduce tu correo electronico",
+        "BUTTON": "Suscribete"
+    },
+    "about": {
+        "TITLE": "Acerca de Level Up",
+        "INTRO": "Bienvenido a Level Up, tu tienda online especializada en la venta de cartuchos de videojuegos arcade antiguos. Somos apasionados de la nostalgia gamer y creemos que los clásicos nunca mueren. Aquí podrás encontrar una cuidada selección de cartuchos originales, desde títulos icónicos de los 80 y 90 hasta rarezas que marcaron una época.",
+        "ARCADE_MAGIC_TITLE": "Revive la Magia del Arcade",
+        "ARCADE_MAGIC_TEXT": "Los videojuegos arcade no solo fueron el origen de la industria, sino que definieron generaciones enteras. En Level Up, queremos que puedas volver a disfrutar de esas joyas retro, ya sea coleccionándolas o jugándolas en tu hardware original.",
+        
+        "WHAT_WE_OFFER_TITLE": "¿Qué ofrecemos?",
+        "WHAT_WE_OFFER_1": "<b>Cartuchos originales</b> en perfecto estado.",
+        "WHAT_WE_OFFER_2": "<b>Ediciones raras y limitadas</b> difíciles de encontrar.",
+        "WHAT_WE_OFFER_3": "<b>Accesorios y manuales</b> para completar tu colección.",
+        "WHAT_WE_OFFER_4": "<b>Asesoramiento personalizado</b> para encontrar el juego que buscas.",
+        
+        "FOR_GAMERS_TITLE": "Para jugadores y coleccionistas",
+        "FOR_GAMERS_TEXT": "Ya seas un coleccionista en busca de una pieza única o un jugador que quiere revivir su infancia, Level Up es el sitio perfecto para ti. Trabajamos con productos cuidadosamente revisados para garantizar la mejor calidad y autenticidad.",
+        
+        "WORLDWIDE_SHIPPING_TITLE": "Envíos a todo el mundo",
+        "WORLDWIDE_SHIPPING_TEXT": "¿Estás buscando ese cartucho que marcó tu infancia? Lo enviamos donde estés para que puedas volver a disfrutarlo."
+    },
+    "find_us": {
+        "TITLE": "Encuentranos",
+        "FACEBOOK": "Facebook",
+        "TWITTER": "Twitter",
+        "INSTAGRAM": "Instagram"
+    },
+    "footer": {
+        "COPYRIGHT": "Level Up. Todos los derechos reservados."
+    },
+    "SHOP": {
+        "TITLE": "🎮 Tienda de Cartuchos Arcade",
+        "BACK": "Volver",
+        "IN_CART": "Ya en el carrito",
+        "ADD_TO_CART": "Añadir al carrito",
+        "CART_TITLE": "🛒 Tu Carrito",
+        "CART_EMPTY": "Tu carrito está vacío.",
+        "REMOVE": "Eliminar",
+        "TOTAL": "Total:",
+        "CHECKOUT": "Finalizar compra"
+    },
+    "common": {
+        "accessDenied": "Acceso denegado",
+        "close": "Cerrar"
+    },
+    "confirmdialog": {
+        "no": "No",
+        "yes": "Sí"
+    },
+    "errors": {
+        "unknown": "Error desconocido"
+    },
+    "hello": "Bienvenido a Jenga 🙌"
+}

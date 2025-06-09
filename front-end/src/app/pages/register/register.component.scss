@@ -1,0 +1,9 @@
+input.invalid {
+    border: 1px solid var(--error);
+  }
+  
+  .error {
+    color: var(--error);
+    font-size: 0.9em;
+    margin-top: 4px;
+  }

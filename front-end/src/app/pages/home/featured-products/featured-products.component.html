@@ -1,0 +1,29 @@
+<div class="con">
+    <section id="featured-products">
+        <p-carousel
+            [value]="cartuchos"
+            [numVisible]="2"
+            [numScroll]="numScroll"
+            [circular]="false"
+            [responsiveOptions]="responsiveOptions"
+        >
+            <ng-template pTemplate="item" let-product>
+                <div class="m-2 p-4 rounded-lg bg-surface">
+                    <div class="mb-4 flex justify-center">
+                        <div class="flex justify-center items-center">
+                            <img
+                                [src]="product.imagenUrl"
+                                [alt]="product.descripcion"
+                                class="w-full rounded-[10px] p-4"
+                            />
+                        </div>
+                    </div>
+                    <div class="mb-1 font-semibold text-2xl !text-text-primary">{{ product.nombre }}</div>
+                    <div class="">
+                        <div class="mt-0 font-medium !text-green-200">{{ product.precio | currency : "EUR" }}</div>
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel>
+    </section>
+</div>

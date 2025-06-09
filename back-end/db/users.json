@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "id": "b80a6cd3-0fbd-4edb-a61f-80e7f0b6ee2e",
+      "name": "Nicolas",
+      "email": "nikolaslf007@gmail.com",
+      "password": "$2a$10$Bvm4dfJHmj4MrUxXjodDnONhXHjoT2AEZdlsA6uJfX67cu/KVwFK6",
+      "role": "admin",
+      "isoCode": "1",
+      "communityId": "12",
+      "provinceId": "28",
+      "createdAt": "2025-05-21T12:09:30.719Z"
+    },
+    {
+      "id": "499ef2af-ce73-430f-bf96-d861db4d2ddd",
+      "name": "Andrea",
+      "email": "andreita123@gmail.com",
+      "password": "$2a$10$lANo.0dKNh8U94B0waX9F.MSriMMDMIc3UgOvR/GeJ3FoTzc6TJFi",
+      "role": "user",
+      "isoCode": "1",
+      "communityId": "01",
+      "provinceId": "04",
+      "createdAt": "2025-05-23T08:51:50.908Z"
+    },
+    {
+      "id": "c7107d3e-93f2-4053-b183-d715db30cf82",
+      "name": "Niko Lopez",
+      "email": "nikolopezflo@gmail.com",
+      "password": null,
+      "role": "user",
+      "isoCode": "",
+      "communityId": "",
+      "provinceId": "",
+      "createdAt": "2025-05-26T14:11:00.965Z"
+    },
+    {
+      "id": "a0ce1854-8240-41eb-90fa-2fe46ea47e9a",
+      "name": "Aurora",
+      "email": "auro123@gmail.com",
+      "password": "$2a$10$V.0tfV/joVZCJa6NR6HEn.nEL97jh1uFGVR8R4PJeDPFn6opAppCO",
+      "role": "user",
+      "isoCode": "1",
+      "communityId": "16",
+      "provinceId": "26",
+      "createdAt": "2025-05-26T16:49:39.629Z"
+    },
+    {
+      "id": "df4b34cc-fc68-40f0-9469-050ccc92b54a",
+      "name": "Nicolas",
+      "email": "nikoalaslf007@gmail.com",
+      "password": "$2a$10$BNNtfQE3Lxvw9FxFGnzID.JYWDvCH7FjRVyvbdXRSTqNz0XMJwiJ.",
+      "role": "admin",
+      "isoCode": "1",
+      "communityId": "02",
+      "provinceId": "22",
+      "createdAt": "2025-06-02T09:34:12.340Z"
+    }
+  ]
+}

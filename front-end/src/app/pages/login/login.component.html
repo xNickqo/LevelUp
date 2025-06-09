@@ -1,0 +1,128 @@
+<!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" /> -->
+<div
+    class="bg-gray-900 absolute top-0 left-0 bg-gradient-to-b from-primary via-primary to-secondary bottom-0 leading-5 h-full w-full overflow-hidden"
+></div>
+<div class="text-sm relative min-h-screen sm:flex sm:flex-row justify-center bg-transparent rounded-3xl shadow-xl">
+    <div class="flex justify-center self-center">
+        <div class="p-12 bg-muted mx-auto rounded-3xl w-96 z-50">
+            <div class="mb-7">
+                <h3 class="font-semibold text-2xl !text-text-primary">Iniciar sesión</h3>
+                <p class="!text-text-secondary">
+                    ¿No tienes una cuenta?
+                    <a
+                        [routerLink]="['/register']"
+                        routerLinkActive="router-link-active"
+                        class="text-sm !text-text-primary hover:!text-text-secondary"
+                        >Regístrate</a
+                    >
+                </p>
+            </div>
+            <form [formGroup]="form" (ngSubmit)="login()">
+                <div class="space-y-4">
+                    <!-- Email Input -->
+                    <div>
+                        <input
+                            formControlName="email"
+                            [class.invalid]="form.get('email')?.invalid && submitted()"
+                            class="w-full text-sm px-4 py-3 bg-gray-medium focus:bg-gray-medium border border-gray-dark rounded-lg focus:outline-none focus:border-light placeholder-text-secondary"
+                            type="email"
+                            placeholder="Email"
+                        />
+                        @if (submitted() && form.get('email')?.invalid) {
+                        <div class="text-red-500 text-sm">
+                            @if(form.get('email')?.errors?.['email']) {
+                            <div>Por favor, introduce un correo válido</div>
+                            } @if(form.get('email')?.errors?.['required']) {
+                            <div>El email es obligatorio</div>
+                            }
+                        </div>
+                        }
+                    </div>
+                    <!-- <p>Email: {{ form.value.email }}</p> -->
+
+                    <!-- Password Input -->
+                    <div class="relative">
+                        <input
+                            formControlName="password"
+                            [class.invalid]="form.get('password')?.invalid && submitted()"
+                            placeholder="Contraseña"
+                            type="password"
+                            class="w-full text-sm px-4 py-3 bg-gray-medium focus:bg-gray-medium border border-gray-dark rounded-lg focus:outline-none focus:border-light placeholder-text-secondary"
+                        />
+                        @if(submitted() && form.get('password')?.invalid) {
+                        <div class="text-red-500 text-sm">
+                            @if(form.get('password')?.errors?.['required']) {
+                            <div>Contraseña es obligatoria</div>
+                            }
+                        </div>
+                        }
+                    </div>
+
+                    <!-- <p>Password: {{ form.value.password }}</p> -->
+
+                    <div>
+                        <button
+                            type="submit"
+                            [disabled]="cargando()"
+                            class="w-full flex justify-center bg-primary hover:bg-primary-hover !text-text-primary p-3 rounded-lg tracking-wide font-semibold cursor-pointer transition ease-in duration-500"
+                        >
+                            @if(cargando()) {
+                            <div class="flex items-center gap-2">
+                                <span>Cargando...</span>
+                                <svg
+                                    class="animate-spin h-4 w-4 text-text-primary"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <circle
+                                        class="opacity-25"
+                                        cx="12"
+                                        cy="12"
+                                        r="10"
+                                        stroke="currentColor"
+                                        stroke-width="4"
+                                    ></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                                </svg>
+                            </div>
+                            } @else {Iniciar sesión}
+                            <ng-template #normalText>
+                                <span>Iniciar sesión</span>
+                            </ng-template>
+                        </button>
+                    </div>
+
+                    @if (errorMsg()) {
+                    <div class="text-red-500 text-sm">{{ errorMsg() }}</div>
+                    }
+                </div>
+            </form>
+
+            <div class="flex items-center justify-center mt-6">
+                <button
+                    (click)="loginWithGoogle()"
+                    class="px-4 py-2 border flex gap-2 cursor-pointer bg-light rounded-lg hover:!shadow-lg transition duration-150"
+                >
+                    <img
+                        class="w-6 h-6"
+                        src="https://www.svgrepo.com/show/475656/google-color.svg"
+                        loading="lazy"
+                        alt="google logo"
+                    />
+                    <span class="!text-text-inverse">Login with Google</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-transparent absolute w-full bottom-0 left-0"></footer>
+
+<svg class="absolute bottom-0 left-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path
+        fill="#fff"
+        fill-opacity="1"
+        d="M0,0L40,42.7C80,85,160,171,240,197.3C320,224,400,192,480,154.7C560,117,640,75,720,74.7C800,75,880,117,960,154.7C1040,192,1120,224,1200,213.3C1280,203,1360,149,1400,122.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
+    ></path>
+</svg>

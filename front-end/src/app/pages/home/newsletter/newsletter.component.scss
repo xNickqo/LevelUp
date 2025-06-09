@@ -1,0 +1,123 @@
+/* NEWSLETTER */
+#newsletter {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 15vw;
+  padding: 3.125rem 6rem;
+
+  background-image: url('../../../../assets/img/background-dino.png');
+  background-origin: border-box;
+  background-position: 50% 60%;
+  background-repeat: no-repeat;
+  background-size: 100vw auto;
+}
+  
+#newsletter div {
+  flex: 1;
+}
+  
+#newsletter div:last-child {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.625rem;
+}
+
+h1 {
+  color: black;
+}
+
+#newsletter input[type='text'] {
+  width: 50%;
+  padding: 0.5rem 1.25rem;
+  border: 0.2rem solid black;
+  color: rgba(82, 82, 82, 0.827);
+  border-radius: var(--border-radius-md);
+}
+
+#newsletter input[type='text']:focus {
+  border-color: var(--color-primary);
+  background-color: #f9f9f9;
+}
+
+#newsletter input[type='button'] {
+  padding: 0.5rem 1.875rem;
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+  #newsletter input[type='button']:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+  box-shadow: var(--shadow-sm);
+}
+  
+#newsletter input[type='button']:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  border-color: var(--error) !important;
+  background-color: #ffe6e6;
+  color: var(--error);
+}
+
+.error::placeholder {
+  color: var(--error);
+  opacity: 1;
+}
+
+.success {
+  border-color: var(--success) !important;
+  background-color: #e6ffe6;
+  color: var(--success);
+}
+
+.success::placeholder {
+  color: var(--success);
+  opacity: 1;
+}
+  
+/* 📱 Media QUERYS */
+@media (max-width: 768px) {
+  #newsletter {
+    padding: 2.5rem 0.625rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #newsletter {
+    padding: 2.5rem 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #newsletter {
+    height: auto;
+    padding: 2rem 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #newsletter div:last-child {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #newsletter input[type='text'] {
+    margin-top: 2rem;
+    width: 80%;
+    box-sizing: border-box;
+    opacity: 0.3;
+  }
+
+  #newsletter input[type='button'] {
+    margin-top: 3rem;
+    width: 40%;
+  }
+}

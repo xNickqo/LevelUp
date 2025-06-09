@@ -1,0 +1,345 @@
+@use "@angular/material" as mat;
+@use "primeicons/primeicons.css";
+@use "tailwindcss";
+
+@theme {
+    --color-primary:      #4057C9;
+    --color-primary-hover:#2547F5;
+    --color-secondary:    #4D5BA1;
+    --color-muted:        #4C5375;
+
+    --color-gray-medium:  #3D3F4A;
+    --color-gray-dark:    #2A2B33;
+    --color-white:        #ffffff;
+    --color-light:        #f9fafb;
+
+    --color-text-primary:   #f9fafb;
+    --color-text-secondary: #cbd5e1;
+    --color-text-inverse:   #2A2B33;
+
+    --font-primary-font: Arial, sans-serif;
+    --font-arcade-font: 'KA1', sans-serif;
+}
+
+:root {
+    /* 🎨 Paleta principal */
+    --color-primary:      #4057C9;
+    --color-primary-hover:#2547F5;
+    --color-secondary:    #4D5BA1;
+    --color-muted:        #4C5375;
+
+    /* 🩶 Grises / Neutrales */
+    --color-gray-medium:  #3D3F4A;
+    --color-gray-dark:    #2A2B33;
+    --color-white:        #ffffff;
+    --color-light:        #f9fafb;
+
+    /* Estados */
+    --error: #E74C3C;
+    --success: #27AE60;
+    --warning: #F39C12;
+
+    /* ✅ Textos */
+    --text-color-primary:   var(--color-light);
+    --text-color-secondary: #cbd5e1;
+    --text-color-inverse:   var(--color-gray-dark);
+
+    /* 🌐 Fondos */
+    --bg-body:        var(--color-gray-dark);
+    --bg-surface:     var(--color-gray-medium);
+    --bg-card:        var(--color-muted);
+    --bg-hover:       var(--color-primary-hover);
+
+    /* 🟦 Bordes y radios */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+
+    /* 🌫️ Sombras */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+  
+    /* 🖋 Fuentes */
+    --primary-font: 'Calibri', sans-serif;
+    --arcade-font: 'KA1', sans-serif;
+  }
+
+  /* 🌙 Modo oscuro */
+.darkmode {
+  --color-primary:        #4057C9;
+  --color-primary-hover:  #2547F5;
+  --color-secondary:      #4D5BA1;
+  --color-muted:          #e5e7eb;
+
+  --color-gray-medium:    #e7e6e6;       
+  --color-gray-dark:      #d4cece;       
+  --color-white:          #ffffff;
+  --color-light:          #b7b7b7;
+
+  --text-color-primary:   #1f2937;
+  --text-color-secondary: #4b5563;
+  --text-color-inverse:   #ffffff;
+
+  --bg-body:      var(--color-light);
+  --bg-surface:   var(--color-white);
+  --bg-card:      var(--color-muted);
+  --bg-hover:     #e0e7ff;
+}
+ 
+  /* Importamos la fuente arcade */
+  @font-face {
+    font-family: 'KA1';
+    src: url('./assets/fonts/ka1.ttf') format('truetype');
+  }
+  
+  /* Tamaño base de la fuente */
+  html {
+    font-size: 16px; /* 1rem = 16px */
+  }
+  
+  * {
+    // margin: 0;
+    // padding: 0;
+    font-family: var(--primary-font);
+    color: var(--text-color-primary);
+  }
+  
+  h1 {
+    font-family: var(--arcade-font);
+    font-size: 1.2rem;
+    font-weight: normal;
+    letter-spacing: 0.1875rem;
+    line-height: 1.2;
+  }
+
+  input:focus {
+    outline: none;
+  }
+  input:focus::placeholder {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  /* 📱 Media QUERYS */
+  @media (max-width: 1600px) {
+    html {
+      font-size: 15px;
+    }
+  }
+  
+  @media (max-width: 1440px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 1280px) {
+    html {
+      font-size: 13.5px;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    html {
+      font-size: 12.5px;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    html {
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    html {
+      font-size: 11px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    html {
+      font-size: 10.5px;
+    }
+  }
+  
+  @media (max-width: 540px) {
+    html {
+      font-size: 10px;
+    }
+  }
+  
+  @media (max-width: 450px) {
+    html {
+      font-size: 9.5px;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    html {
+      font-size: 9px;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    html {
+      font-size: 8px;
+    }
+  }
+  
+  @media (max-width: 260px) {
+    html {
+      font-size: 7px;
+    }
+  }
+  
+// /* Definimos la animación global para todas las transiciones */
+// ::view-transition-old(root) {
+//   animation-name: fade-out;
+//   animation-duration: 500ms;
+//   animation-timing-function: ease-in-out;
+// }
+
+// ::view-transition-new(root) {
+//   animation-name: fade-in;
+//   animation-duration: 500ms;
+//   animation-timing-function: ease-in-out;
+// }
+
+// @keyframes fade-out {
+//   from {
+//     opacity: 1;
+//     transform: scale(1);
+//   }
+//   to {
+//     opacity: 0;
+//     transform: scale(1.2);
+//   }
+// }
+
+// @keyframes fade-in {
+//   from {
+//     opacity: 0;
+//     transform: scale(1.2);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: scale(1);
+//   }
+// }
+
+/* primeng solucion conflictos */
+.p-select-option{
+    span{
+      color: black;
+    }
+  }
+
+// solucion a conflictos entre material y tailwind
+.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field .mdc-notched-outline__notch { 
+  border-right-style: hidden; 
+}
+
+// ESTILOS PERSONALIZADOS DE ANGULAR MATERIAL 
+:root {
+  @include mat.paginator-overrides((
+    container-text-color: rgb(255, 255, 255),
+    container-background-color: var(--bg-card),
+    enabled-icon-color: rgb(255, 255, 255),
+    disabled-icon-color: rgb(151, 151, 151),
+    // container-text-tracking: 0.1,
+    // container-text-weight: 400,
+    // select-trigger-text-size: 1.2rem,
+    // container-text-font: sans-serif,
+    // container-text-line-height: 1.2rem,
+    // container-size: 1.2rem,
+    // form-field-container-height: 1.2rem,
+    // form-field-container-vertical-padding: 1.2rem,
+    // touch-target-display: none,
+  ));
+
+  @include mat.select-overrides((
+    // container-elevation-shadow: none,
+    panel-background-color: var(--bg-surface),
+    // enabled-trigger-text-color: rgb(255, 255, 255),
+    // disabled-trigger-text-color: rgb(130, 130, 130),
+    // placeholder-text-color: rgb(176, 176, 176),
+    // enabled-arrow-color: rgb(255, 255, 255),
+    // disabled-arrow-color: rgb(94, 94, 94),
+    // focused-arrow-color: var(--bg-body),
+    // invalid-arrow-color: var(--error),
+    // trigger-text-size: 1.2rem,
+    // trigger-text-line-height: 1.2rem,
+    // trigger-text-font: sans-serif,
+    // trigger-text-tracking: 0.1,
+    // trigger-text-weight: 400,
+    arrow-transform: rotate(90deg),
+  ));
+
+  @include mat.table-overrides((
+    row-item-outline-width: 1px,
+    background-color: var(--bg-card),
+    header-headline-color: var(--text-color-primary),
+    // header-headline-font: sans-serif,
+    // header-headline-line-height: 1.2rem,
+    // header-headline-weight: 400,
+    // header-headline-tracking: 0.1,
+    // row-item-label-text-font: sans-serif,
+    // row-item-label-text-line-height: 1.2rem,
+    row-item-label-text-size: 0.9rem,
+    row-item-label-text-color: var(--text-color-secondary)
+  ));
+
+  @include mat.button-overrides((
+    
+  ));
+
+  @include mat.form-field-overrides((
+    // outlined-container-shape: none,
+    outlined-hover-outline-color: var(--color-primary),
+    outlined-caret-color: var(--color-primary),
+    outlined-focus-outline-color: var(--color-primary-hover),
+    outlined-focus-label-text-color: var(--color-primary-hover),
+    outlined-label-text-color: var(--text-color-secondary),
+    outlined-hover-label-text-color: var(--text-color-secondary),
+    outlined-input-text-color: var(--text-color-secondary),
+    outlined-input-text-placeholder-color: var(--text-color-secondary),
+    outlined-outline-color: var(--color-primary),
+    // outlined-label-text-font: var(--arcade-font),
+    // outlined-label-text-size: 1.2rem,
+    // outlined-label-text-tracking: 0.1,
+    // outlined-label-text-weight: bold,
+  ));
+
+
+  @include mat.dialog-overrides((
+    // container-shape: none,
+    container-color: var(--bg-card),
+    subhead-color: var(--text-color-primary),
+    supporting-text-color: var(--text-color-secondary),
+    // subhead-font: sans-serif,
+    // subhead-line-height: 1.2rem,
+    // subhead-weight: 400,
+    // subhead-tracking: 0.1,
+    subhead-size: 2rem,
+    // supporting-text-font: sans-serif,
+    // supporting-text-line-height: 1.2rem,
+    supporting-text-size: 0.9rem,
+    // supporting-text-tracking: 0.1,
+    supporting-text-weight: 200,
+    // container-elevation-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1),
+    container-max-width: 500px,
+    // container-small-max-width: 300px,
+    container-min-width: 300px,
+    // actions-alignment: center,
+    // actions-padding: 0.5rem,
+    // content-padding: 0.5rem,
+    // headline-padding: 0.5rem,
+  ));
+}
+
+
+.mat-mdc-raised-button:not(:disabled), .mat-mdc-button:not(:disabled){
+    background-color: var(--color-primary) !important;
+}

@@ -1,0 +1,66 @@
+<header id="header">
+    <!-- Logo  -->
+    <div class="header-left">
+        <div class="logo">
+            <img src="assets/img/logo.PNG" alt="logo" />
+        </div>
+    </div>
+
+    <!-- Icono de menú para responsive -->
+    <a href="#menu" class="menu-icon">
+        <i class="fa-solid fa-bars"></i>
+    </a>
+
+    <!-- Menú principal -->
+    <nav class="menu flex-1" id="menu">
+        <ul>
+            <li>
+                <a routerLink="/shop">{{ "header.SHOP" | translate }}</a>
+            </li>
+            |
+            <li>
+                <a href="#about">{{ "header.ABOUT" | translate }}</a>
+            </li>
+            |
+            <li>
+                <a href="#pre-footer">{{ "header.SUPPORT" | translate }}</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="right-menu">
+        <!-- Botón para administrar productos -->
+        @if (isAdmin) {
+        <div class="admin-button">
+            <button (click)="goToCrud()" class="darkmode-toggle admin-toggle-button">
+                <i class="pi pi-cog"></i>
+            </button>
+        </div>
+        }
+
+        <!-- 🔘 Botón modo oscuro -->
+        <div class="darkmode-buttton">
+            <button (click)="toggleDarkMode()" class="darkmode-toggle">
+                {{ isDarkMode ? "🌙" : "☀️" }}
+            </button>
+        </div>
+
+        <!-- Icono de usuario -->
+        <div class="user-icon" (click)="toggleDropdown()" #dropdownToggle>
+            <i class="fa-solid fa-circle-user"></i>
+
+            <!-- Menú desplegable con información del usuario -->
+            <div class="dropdown" [class.show]="isDropdownOpen">
+                <div class="dropdown-user-info">
+                    <p class="user-name">{{ usuario.name }}</p>
+                    <p class="user-email">{{ usuario.email }}</p>
+                </div>
+                <hr />
+                <button (click)="logout()">{{ "header.LOGOUT" | translate }}</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Capa oscura para cerrar el menú al hacer clic fuera -->
+    <a href="#" class="overlay"></a>
+</header>

@@ -1,0 +1,195 @@
+<!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" /> -->
+<div
+    class="bg-gray-900 absolute top-0 left-0 bg-gradient-to-b from-primary via-primary to-secondary bottom-0 leading-5 h-full w-full overflow-hidden"
+></div>
+<div class="text-sm relative min-h-screen sm:flex sm:flex-row justify-center bg-transparent rounded-3xl shadow-xl">
+    <div class="flex justify-center self-center">
+        <div class="p-12 bg-muted mx-auto rounded-3xl w-96 z-50">
+            <div class="mb-7">
+                <h3 class="font-semibold text-2xl !text-text-primary">Registrarse</h3>
+                <p class="!text-text-secondary">
+                    ¿Ya tienes una cuenta?
+                    <a
+                        [routerLink]="['/login']"
+                        routerLinkActive="router-link-active"
+                        class="text-sm !text-text-primary hover:!text-text-secondary"
+                        >Inicia sesión</a
+                    >
+                </p>
+            </div>
+            <form [formGroup]="form" (ngSubmit)="onRegister()">
+                <div class="space-y-4">
+                    <!-- Name Input -->
+                    <div>
+                        <input
+                            formControlName="name"
+                            [class.invalid]="submitted() && name?.invalid"
+                            class="w-full text-sm px-4 py-3 bg-gray-medium focus:bg-gray-medium border border-gray-dark rounded-lg focus:outline-none focus:border-light placeholder-text-secondary"
+                            type="text"
+                            placeholder="Nombre"
+                        />
+                        @if(submitted() && name?.invalid) {
+                        <div class="!text-red-500">
+                            @if(name?.errors?.['required']) {
+                            <div>El nombre es obligatorio</div>
+                            } @if(name?.errors?.['minlength']) {
+                            <div>El nombre debe tener al menos 3 caracteres</div>
+                            } @if(name?.errors?.['maxlength']) {
+                            <div>El nombre no puede exceder los 50 caracteres</div>
+                            }
+                        </div>
+                        }
+                    </div>
+
+                    <!-- Email Input -->
+                    <div>
+                        <input
+                            formControlName="email"
+                            [class.invalid]="email?.invalid && submitted()"
+                            class="w-full text-sm px-4 py-3 bg-gray-medium focus:bg-gray-medium border border-gray-dark rounded-lg focus:outline-none focus:border-light placeholder-text-secondary"
+                            type="email"
+                            placeholder="Email"
+                        />
+                        @if(submitted() && email?.invalid) {
+                        <div class="!text-red-500">
+                            @if(email?.errors?.['required']) {
+                            <div>El correo electrónico es obligatorio</div>
+                            } @if(email?.errors?.['email']) {
+                            <div>Por favor, introduce un correo válido</div>
+                            }
+                        </div>
+                        }
+                    </div>
+
+                    <!-- Password Input -->
+                    <div class="relative">
+                        <input
+                            formControlName="password"
+                            [class.invalid]="password?.invalid && submitted()"
+                            placeholder="Contraseña"
+                            type="password"
+                            class="w-full text-sm px-4 py-3 bg-gray-medium focus:bg-gray-medium border border-gray-dark rounded-lg focus:outline-none focus:border-light placeholder-text-secondary"
+                        />
+                        @if(submitted() && password?.invalid) {
+                        <div class="!text-red-500">
+                            @if(password?.errors?.['required']) {
+                            <div>Contraseña es obligatoria</div>
+                            } @if(password?.errors?.['minlength']) {
+                            <div>La contraseña debe tener al menos 4 caracteres</div>
+                            } @if(password?.errors?.['pattern']) {
+                            <div>Password must include at least one uppercase letter, one number, and one special character</div>
+                            }
+                        </div>
+                        }
+                    </div>
+
+                    <!-- Confirm Password Input -->
+                    <div>
+                        <input
+                            formControlName="confirmPassword"
+                            [class.invalid]="confirmPassword?.invalid && submitted()"
+                            type="password"
+                            placeholder="Confirmar contraseña"
+                            class="w-full text-sm px-4 py-3 bg-gray-medium focus:bg-gray-medium border border-gray-dark rounded-lg focus:outline-none focus:border-light placeholder-text-secondary"
+                        />
+                        @if(submitted() && confirmPassword?.invalid) {
+                        <div class="!text-red-500">
+                            @if(confirmPassword?.errors?.['required']) {
+                            <div>Debes confirmar la contraseña</div>
+                            } @if(confirmPassword?.errors?.['passwordMismatch']) {
+                            <div>Las contraseñas no coinciden</div>
+                            }
+                        </div>
+                        }
+                    </div>
+
+                    <div class="flex justify-end">
+                        <mat-slide-toggle class="!text-text-primary" labelPosition="before" formControlName="isAdmin">
+                            Administrador
+                        </mat-slide-toggle>
+                    </div>
+
+                    <!-- Country -->
+                    <div>
+                        <select
+                            formControlName="isoCode"
+                            class="w-full px-4 py-3 bg-gray-medium focus:bg-gray-medium rounded-lg border border-gray-dark focus:outline-none focus:border-light placeholder-text-secondary"
+                        >
+                            <option value="" disabled selected>Seleccione un país</option>
+                            @for(coutry of countries(); track coutry) {
+                            <option [value]="coutry.id">{{ coutry.name }}</option>
+                            }
+                        </select>
+                        @if(submitted() && isoCode?.invalid) {
+                        <div class="!text-red-500">País obligatorio</div>
+                        }
+                    </div>
+
+                    <div>
+                        <select
+                            formControlName="communityId"
+                            [disabled]="!isoCode?.value"
+                            [ngClass]="{
+                                'opacity-50 cursor-not-allowed': !isoCode?.value,
+                                'bg-gray-100': !isoCode?.value
+                            }"
+                            class="w-full px-4 py-3 bg-gray-medium focus:bg-gray-medium rounded-lg border border-gray-dark focus:outline-none focus:border-light placeholder-text-secondary"
+                        >
+                            <option value="" disabled selected>Seleccione una comunidad</option>
+                            @for(community of communities(); track community) {
+                            <option [value]="community.id">{{ community.name }}</option>
+                            }
+                        </select>
+                        @if(submitted() && communityId?.invalid) {
+                        <div class="!text-red-500">Comunidad obligatoria</div>
+                        }
+                    </div>
+
+                    <!-- Province -->
+                    <div>
+                        <select
+                            formControlName="provinceId"
+                            [disabled]="!communityId?.value"
+                            [ngClass]="{
+                                'opacity-50 cursor-not-allowed': !communityId?.value,
+                                'bg-gray-100': !communityId?.value
+                            }"
+                            class="w-full px-4 py-3 bg-gray-medium focus:bg-gray-medium rounded-lg border border-gray-dark focus:outline-none focus:border-light placeholder-text-secondary"
+                        >
+                            <option value="" disabled selected>Seleccione una provincia</option>
+                            @for(province of provinces(); track province) {
+                            <option [value]="province.id">{{ province.name }}</option>
+                            }
+                        </select>
+                        @if(submitted() && provinceId?.invalid) {
+                        <div class="!text-red-500">Provincia obligatoria</div>
+                        }
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div>
+                        <button
+                            type="submit"
+                            class="w-full flex justify-center bg-primary hover:bg-primary-hover !text-text-primary p-3 rounded-lg tracking-wide font-semibold cursor-pointer transition ease-in duration-500"
+                        >
+                            Registrarse
+                        </button>
+                    </div>
+                    @if(errorMsg()) {
+                    <div class="!text-red-500">{{ errorMsg() }}</div>
+                    }
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-transparent absolute w-full bottom-0 left-0"></footer>
+
+<svg class="absolute bottom-0 left-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path
+        fill="#fff"
+        fill-opacity="1"
+        d="M0,0L40,42.7C80,85,160,171,240,197.3C320,224,400,192,480,154.7C560,117,640,75,720,74.7C800,75,880,117,960,154.7C1040,192,1120,224,1200,213.3C1280,203,1360,149,1400,122.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
+    ></path>
+</svg>

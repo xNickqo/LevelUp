@@ -1,0 +1,22 @@
+<footer>
+    <div class="copyright">
+        <i class="fa-regular fa-copyright"></i>
+        <p>Level Up</p>
+    </div>
+
+    <div class="language-select">
+        <p-inputgroup>
+            <p-select
+                [(ngModel)]="currentLang"
+                (onChange)="selectLanguage($event.value)"
+                [options]="languageItems"
+                placeholder="Select Language"
+                class="!text-black"
+            >
+            </p-select>
+            <p-inputgroup-addon>
+                <img src="../../../assets/icons/languages.svg" alt="Languages" />
+            </p-inputgroup-addon>
+        </p-inputgroup>
+    </div>
+</footer>

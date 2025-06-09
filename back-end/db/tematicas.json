@@ -1,0 +1,47 @@
+{
+    "tematicas": [
+      {
+        "nombre": "Acción"
+      },
+      {
+        "nombre": "Carreras"
+      },
+      {
+        "nombre": "Deportes"
+      },
+      {
+        "nombre": "Lucha"
+      },
+      {
+        "nombre": "Aventura"
+      },
+      {
+        "nombre": "RPG"
+      },
+      {
+        "nombre": "Fantasía"
+      },
+      {
+        "nombre": "Futurista"
+      },
+      {
+        "nombre": "Western"
+      },
+      {
+        "nombre": "Superhéroes"
+      },
+      {
+        "nombre": "Sigilo"
+      },
+      {
+        "nombre": "Simulación"
+      },
+      {
+        "nombre": "Carreras de Fórmula 1"
+      },
+      {
+        "nombre": "Guerra"
+      }
+    ]
+  }
+  

@@ -1,0 +1,89 @@
+{
+  "communities": [
+    {
+      "id": "01",
+      "name": "Andalucía",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "02",
+      "name": "Aragón",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "03",
+      "name": "Asturias",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "04",
+      "name": "Baleares",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "05",
+      "name": "Canarias",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "06",
+      "name": "Cantabria",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "07",
+      "name": "Castilla-La Mancha",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "08",
+      "name": "Castilla y León",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "09",
+      "name": "Cataluña",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "10",
+      "name": "Extremadura",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "11",
+      "name": "Galicia",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "12",
+      "name": "Madrid",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "13",
+      "name": "Murcia",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "14",
+      "name": "Navarra",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "15",
+      "name": "País Vasco",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "16",
+      "name": "La Rioja",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "17",
+      "name": "Comunidad Valenciana",
+      "createdAt": "2024-05-20T10:00:00.000Z"
+    }
+  ]
+}
