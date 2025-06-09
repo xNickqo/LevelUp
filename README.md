@@ -1,4 +1,3 @@
-react  frontend  api  nodejs  portfolio
 
 <p align="center">
   <img src="front-end/src/assets/img/logo.PNG" alt="Logo" width="200"/>
