@@ -1,135 +1,67 @@
-# Generic CRUD API
+# 🎮 LevelUp Generic CRUD API
 
-A simple Node.js API that provides CRUD operations for any entity type using a JSON file as a database.
+API REST en **Node.js** y **Express** para gestionar entidades con operaciones CRUD, autenticación JWT y funcionalidades adicionales como paginación, localización, envío de emails y documentación con Swagger.
 
-## Features
+---
 
-- Create, read, update, and delete any JSON entity
-- Flexible schema - store any type of entity
-- UUID generation for unique IDs
-- JSON file storage - no database setup required
-- Interactive API documentation with Swagger
-- User authentication with JWT
-- Protected API endpoints
+## 🚀 Características principales
 
-## Installation
+- ✅ CRUD completo para entidades JSON con esquema flexible  
+- 📄 Paginación, filtrado y ordenación  
+- 🆔 IDs únicos con UUID  
+- 💾 Almacenamiento simple en archivos JSON  
+- 📚 Documentación interactiva con Swagger UI  
+- 🔐 Autenticación con JWT para proteger rutas  
+- 🗂️ Gestión de temáticas y localizaciones (países, comunidades, provincias)  
+- 📧 Envío de correos a través de endpoint específico  
 
-1. Clone the repository
-2. Install dependencies:
+---
 
-```bash
-npm install
-```
+📚 Documentación interactiva
+Consulta la documentación completa y prueba los endpoints en:
 
-## Usage
+👉 http://localhost:3000/api-docs
 
-Start the development server:
+---
 
-```bash
-npm run dev
-```
+## 🔐 Autenticación
 
-Or start the production server:
+Todos los endpoints requieren incluir un **JWT** válido en el header:
 
-```bash
-npm start
-```
+### Endpoints de autenticación
 
-The server will run on http://localhost:3000 by default.
-
-## Authentication
-
-All API endpoints require authentication. You need to:
-
-1. Register a user (signup) or login (signin) to get a JWT token
-2. Include the token in the Authorization header of your requests
-
-### Authentication Endpoints
-
-| Method | Endpoint     | Description               |
+| Método | Endpoint     | Descripción               |
 | ------ | ------------ | ------------------------- |
-| POST   | /auth/signup | Register a new user       |
-| POST   | /auth/signin | Login and get a JWT token |
+| POST   | /auth/signup | Registrar nuevo usuario   |
+| POST   | /auth/signin | Login y obtención de JWT  |
 
-### Example Authentication
 
-#### Register a new user:
+**Entidades**
+| Método | Endpoint                | Descripción                                           |
+| ------ | ----------------------- | ----------------------------------------------------- |
+| GET    | /api/entities           | Obtener todas las entidades                           |
+| POST   | /api/entities           | Crear una nueva entidad                               |
+| GET    | /api/entities/{id}      | Obtener entidad por ID                                |
+| PUT    | /api/entities/{id}      | Actualizar entidad existente                          |
+| DELETE | /api/entities/{id}      | Eliminar entidad                                      |
+| GET    | /api/paginated-entities | Obtener entidades paginadas con filtrado y ordenación |
 
-```bash
-curl -X POST http://localhost:3000/auth/signup \
-  -H "Content-Type: application/json" \
-  -d '{"email": "user@example.com", "password": "yourpassword", "name": "Your Name"}'
-```
 
-#### Login with existing user:
+**Temáticas**
+| Método | Endpoint       | Descripción                 |
+| ------ | -------------- | --------------------------- |
+| GET    | /api/tematicas | Obtener todas las temáticas |
 
-```bash
-curl -X POST http://localhost:3000/auth/signin \
-  -H "Content-Type: application/json" \
-  -d '{"email": "user@example.com", "password": "yourpassword"}'
-```
 
-Both endpoints will return a JWT token that you need to use in subsequent requests.
+**Localización**
+| Método | Endpoint                          | Descripción                               |
+| ------ | --------------------------------- | ----------------------------------------- |
+| GET    | /location/countries               | Obtener todos los países                  |
+| GET    | /location/communities             | Obtener todas las comunidades autónomas   |
+| GET    | /location/provinces/{communityId} | Obtener provincias por comunidad autónoma |
 
-## API Documentation
+**Email**
+| Método | Endpoint    | Descripción                 |
+| ------ | ----------- | --------------------------- |
+| POST   | /email/send | Enviar correo de invitación |
 
-The API documentation is available at http://localhost:3000/api-docs when the server is running.
-
-This interactive documentation powered by Swagger allows you to:
-
-- Explore all available endpoints
-- See request/response models
-- Test the API directly from your browser
-
-## API Endpoints
-
-| Method | Endpoint          | Description               |
-| ------ | ----------------- | ------------------------- |
-| GET    | /api/entities     | Get all entities          |
-| GET    | /api/entities/:id | Get entity by ID          |
-| POST   | /api/entities     | Create a new entity       |
-| PUT    | /api/entities/:id | Update an existing entity |
-| DELETE | /api/entities/:id | Delete an entity          |
-
-## Example Requests
-
-All API requests require the JWT token in the Authorization header.
-
-### Create a new entity
-
-```bash
-curl -X POST http://localhost:3000/api/entities \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
-  -d '{"name": "Example Entity", "description": "This is an example entity", "status": "active"}'
-```
-
-### Get all entities
-
-```bash
-curl http://localhost:3000/api/entities \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN"
-```
-
-### Get entity by ID
-
-```bash
-curl http://localhost:3000/api/entities/YOUR_ENTITY_ID \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN"
-```
-
-### Update an entity
-
-```bash
-curl -X PUT http://localhost:3000/api/entities/YOUR_ENTITY_ID \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
-  -d '{"name": "Updated Entity", "status": "inactive"}'
-```
-
-### Delete an entity
-
-```bash
-curl -X DELETE http://localhost:3000/api/entities/YOUR_ENTITY_ID \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN"
-```

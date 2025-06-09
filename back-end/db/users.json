@@ -54,6 +54,17 @@
       "communityId": "02",
       "provinceId": "22",
       "createdAt": "2025-06-02T09:34:12.340Z"
+    },
+    {
+      "id": "9becea36-91d4-4b7d-b068-a9c0dfc75ffa",
+      "name": "Nicolas",
+      "email": "test123@gmail.com",
+      "password": "$2a$10$mpxwL/RvTOmnGhs1vxVrNO5MSf6CguicFUDKhf8st7.8.MHg3WvGG",
+      "role": "admin",
+      "isoCode": "1",
+      "communityId": "09",
+      "provinceId": "08",
+      "createdAt": "2025-06-09T13:50:20.888Z"
     }
   ]
 }
